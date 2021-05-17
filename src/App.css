@@ -1,3 +1,8 @@
+:root {
+  --blue: #007be9;
+  --lightblue: #709df5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +11,38 @@
 
 .App {
   display: flex;
+}
+
+.navbar {
+  width: 80px;
+  height: 100vh;
+  padding-top: 64px;
+  background-color: #007be9;
+  background-image: linear-gradient(0deg, #007be9 0%, #709df5 100%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: white;
+
+  width: 64px;
+  height: 64px;
+  margin-top: 10px;
+  
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all .5s ease;
+}
+
+.navbar__link:hover {
+  background-color: var(--blue);
 }
