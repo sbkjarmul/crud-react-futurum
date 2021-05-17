@@ -1,9 +1,13 @@
 import React from 'react'
+import '../../App.css'
+import Title from '../atoms/Title'
+import Form from '../organisms/Form'
 
 const AddCampaign = () => {
   return (
-    <div>
-      <h1>Add Campaign</h1>
+    <div className="home">
+      <Title>Add Campaign</Title>
+      <Form />
     </div>
   )
 }
