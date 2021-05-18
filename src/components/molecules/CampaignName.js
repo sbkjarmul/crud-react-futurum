@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Label from '../atoms/Label'
 
-const CampaignName = () => {
+const CampaignName = ({setName}) => {
+
+  const getName = (e) => {
+    setName(e.target.value);
+  }
+
   return (
     <div>
       <Label formField="campaign-name">Name</Label>
-      <input className="form__input" type="text" name="campaign-name" required />
+      <input className="form__input" type="text" onChange={getName} name="campaign-name" required />
     </div>
   )
 }

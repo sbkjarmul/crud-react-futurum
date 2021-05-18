@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Label = ({ formField, children }) => {
+const Label = ({ children }) => {
   return (
-      <label className="form__label" for={formField} >{children}</label>
+      <label className="form__label">{children}</label>
   )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import '../../App.css'
 
-const Form = ({children}) => {
+const Form = ({children, onSubmit}) => {
   return (
     <div>
-      <form className="form">
+      <form onSubmit={onSubmit} className="form">
         {children}
       </form>
     </div>
