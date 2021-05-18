@@ -5,8 +5,8 @@ import Form from '../organisms/Form'
 import CampaignName from '../molecules/CampaignName'
 import Keywords from '../molecules/Keywords'
 import CampaignFund from '../molecules/CampaignFund'
-import Status from '../molecules/Status'
 import BidAmount from '../molecules/BidAmount'
+import Status from '../molecules/Status'
 import Town from '../molecules/Town'
 import Radius from '../molecules/Radius'
 import ButtonBox from '../molecules/ButtonBox'
@@ -16,7 +16,7 @@ const AddCampaign = () => {
     <div className="home">
       <Title>Add Campaign</Title>
       <Form>
-      <CampaignName />
+        <CampaignName />
         <Keywords />
         <CampaignFund />
         <BidAmount />

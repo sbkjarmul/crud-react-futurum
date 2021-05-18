@@ -6,7 +6,7 @@ const ButtonBox = ({submitName}) => {
   return (
     <div className="form__button-box">
     <Link className="form__button form__button--cancel" to="/">Cancel</Link>
-    <Button>{submitName}</Button>
+    <Button buttonSize='primary'>{submitName}</Button>
   </div>
   )
 }

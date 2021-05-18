@@ -1,9 +1,10 @@
 import React from 'react'
 import '../../App.css'
 
-const Button = ({ children }) => {
+const Button = ({ buttonSize, children }) => {
+  const buttonClass = buttonSize === 'primary' ? 'form__button form__button--primary' : 'form__button form__button--primary form__button--small';
   return (
-    <button className="form__button form__button--primary" type="submit">{children}</button>
+    <button className={buttonClass} type="submit">{children}</button>
   )
 }
 
