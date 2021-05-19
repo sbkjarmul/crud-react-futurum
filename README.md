@@ -26,5 +26,5 @@ docker-compose up --build
 
 go to crud-futurum
 ```
-npm run build`
+npm run build
 ```
