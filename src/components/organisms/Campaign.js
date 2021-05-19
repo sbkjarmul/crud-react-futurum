@@ -21,6 +21,10 @@ export const Campaign = ({ campaign }) => {
     setCurrentCampaign(campaign);
   }
 
+  const handleClick = () => {
+    deleteCampaign(campaign.id);
+  }
+
   return (
     <div className="campaign">
       <div className="campaign__column--name">{ campaign.name }</div>
@@ -34,7 +38,7 @@ export const Campaign = ({ campaign }) => {
         <Link to={`/edit/${campaign.id}`} onClick={getCampaign}>
           <Button buttonSize="small" buttonType="button"><FaEdit/></Button>
         </Link>
-        <Button buttonSize="small" buttonType="button"><MdDelete/></Button>
+        <Button handleButtonClick={handleClick} buttonSize="small" buttonType="delete"><MdDelete/></Button>
       </div>
     </div>
   )

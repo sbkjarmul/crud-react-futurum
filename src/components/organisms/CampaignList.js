@@ -1,11 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import '../../App.css'
 import Campaign from './Campaign'
 import CampaignHeader from './CampaignHeader'
 import { GlobalContext } from '../../context/GlobalContext'
 
 export const CampaignList = () => {
-  const { campaigns } = useContext(GlobalContext);
+  const { campaigns, getCampaigns } = useContext(GlobalContext);
+
+  useEffect(() => {
+    getCampaigns();
+    console.log('load campaigns');
+  }, [refresh])
 
   return (
     <div className="campaign-list">

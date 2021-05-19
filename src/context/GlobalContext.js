@@ -5,11 +5,9 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({children}) => {
 
   const [campaigns, setCampaigns] = useState([]);
-  const [currentCampaign, setCurrentCampaign] = useState({});
-
-  useEffect(() => {
-    getCampaigns();
-  }, [campaigns])
+  const [currentCampaign, setCurrentCampaign] = useState({}); 
+  const [refresh, setRefresh] = useState(true);
+ 
 
   const getCampaigns = async () => {
     const response = await fetch('http://localhost:5000/campaigns');
@@ -28,6 +26,7 @@ export const GlobalProvider = ({children}) => {
 
     const data = response.json();
     console.log('Dodano!');
+    setRefresh(!refresh);
   }
 
   const editCampaign = async (campaign) => {
@@ -40,6 +39,7 @@ export const GlobalProvider = ({children}) => {
 
     const data = response.json();
     console.log('Zaktualizowano!');
+    setRefresh(!refresh);
   }
 
   const deleteCampaign = async (id) => {
@@ -47,10 +47,20 @@ export const GlobalProvider = ({children}) => {
     {
       method: 'DELETE',
     });
+    console.log('Usunięto!');
+    setRefresh(!refresh);
   }
 
   return (
-    <GlobalContext.Provider value={{ campaigns, addCampaign, currentCampaign, setCurrentCampaign, editCampaign, deleteCampaign }}>
+    <GlobalContext.Provider value={{ 
+      campaigns,
+      getCampaigns, 
+      addCampaign, 
+      currentCampaign, 
+      setCurrentCampaign, 
+      editCampaign, 
+      deleteCampaign, 
+      refresh }}>
       {children}
     </GlobalContext.Provider>
   )
