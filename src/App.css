@@ -273,7 +273,6 @@
   .content-box {
     margin-left: 0px;
     margin-top: var(--navbarWidth);
-
   }
 }
 
@@ -305,4 +304,3 @@
     min-width: 640px;
   }
 }
-
