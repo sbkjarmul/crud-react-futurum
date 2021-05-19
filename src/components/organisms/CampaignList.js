@@ -5,7 +5,7 @@ import CampaignHeader from './CampaignHeader'
 import { GlobalContext } from '../../context/GlobalContext'
 
 export const CampaignList = () => {
-  const { campaigns, getCampaigns } = useContext(GlobalContext);
+  const { campaigns, getCampaigns, refresh } = useContext(GlobalContext);
 
   useEffect(() => {
     getCampaigns();
