@@ -27,14 +27,14 @@ export const Campaign = ({ campaign }) => {
 
   return (
     <div className="campaign">
-      <div className="campaign__column--name">{ campaign.name }</div>
-      <div className="campaign__column--keywords"> { campaign.keywords }</div>
-      <div className="campaign__column--fund">${ campaign.fund }</div>
-      <div className="campaign__column--bid">${ campaign.bid_amount }</div>
-      <div className="campaign__column--status">{ getStatus() }</div>
-      <div className="campaign__column--town">{ campaign.town }</div>
-      <div className="campaign__column--radius">{ campaign.radius } km</div>
-      <div className="campaign__column--action">
+      <div className="campaign__column campaign__column--name">{ campaign.name }</div>
+      <div className="campaign__column campaign__column--keywords"> { campaign.keywords }</div>
+      <div className="campaign__column campaign__column--fund">${ campaign.fund }</div>
+      <div className="campaign__column campaign__column--bid">${ campaign.bid_amount }</div>
+      <div className="campaign__column campaign__column--status">{ getStatus() }</div>
+      <div className="campaign__column campaign__column--town">{ campaign.town }</div>
+      <div className="campaign__column campaign__column--radius">{ campaign.radius } km</div>
+      <div className="campaign__column campaign__column--action">
         <Link to={`/edit/${campaign.id}`} onClick={getCampaign}>
           <Button buttonSize="small" buttonType="button">
             <FaEdit/>
