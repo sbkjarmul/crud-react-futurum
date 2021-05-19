@@ -17,19 +17,18 @@ import { GlobalContext } from '../../context/GlobalContext'
 
 const AddCampaign = () => {
   const { addCampaign } = useContext(GlobalContext);
-  const { sendCampaign } = useContext(GlobalContext);
 
   const [name, setName] = useState('');
   const [keywords, setKeywords] = useState('');
   const [fund, setFund] = useState(0.0);
   const [bidAmount, setBidAmount] = useState(0.0);
-  const [status, setStatus] = useState(true);
+  const [status, setStatus] = useState(Boolean);
   const [town, setTown] = useState('');
   const [radius, setRadius] = useState(0.0);
   const history = useHistory();
 
   const onSubmit = (e) => {
-
+    console.log(status);
     const newCampaign = {
       name,
       keywords,
@@ -39,8 +38,6 @@ const AddCampaign = () => {
       town: town === '' ? 'Chicago' : town,
       radius
     };
-
-    console.log(newCampaign);
   
     addCampaign(newCampaign);
     history.push('/');

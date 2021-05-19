@@ -159,6 +159,16 @@
   justify-content: flex-end;
 }
 
+.form__radio-box {
+  margin-left: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form__radio {
+  margin-right: 48px;
+}
+
 .title {
   font-size: 32px;
   font-weight: 500;
