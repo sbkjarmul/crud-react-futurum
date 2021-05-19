@@ -61,6 +61,11 @@
   transition: all .5s ease;
 }
 
+.navbar__link--active {
+  color: white;
+  background-color: var(--blue);
+}
+
 .navbar__link:hover {
   color: white;
   background-color: var(--blue);
@@ -164,8 +169,6 @@
   display: flex;
   justify-content: flex-start;
 }
-
-
 
 .form__radio {
   margin-right: 48px;

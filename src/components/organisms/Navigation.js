@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import '../../App.css'
 import { IoHome } from 'react-icons/io5'
 import { HiViewGridAdd } from 'react-icons/hi'
@@ -7,12 +7,12 @@ import { HiViewGridAdd } from 'react-icons/hi'
 const Navigation = () => {
   return (
     <div className='navbar' >
-      <Link className='navbar__link' to='/'>
+      <NavLink className='navbar__link' exact activeClassName="navbar__link--active" to='/'>
         <IoHome />
-      </Link>
-      <Link className='navbar__link' to='/add'>
+      </NavLink>
+      <NavLink className='navbar__link' exact activeClassName="navbar__link--active" to='/add'>
         <HiViewGridAdd />
-      </Link>
+      </NavLink>
     </div>
   )
 }

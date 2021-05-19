@@ -37,7 +37,7 @@ export const GlobalProvider = ({ children }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(campaign)
     });
-    
+
     setRefresh(!refresh);
   }
 
@@ -59,8 +59,9 @@ export const GlobalProvider = ({ children }) => {
       setCurrentCampaign, 
       editCampaign, 
       deleteCampaign, 
-      refresh }}>
-        {children}
+      refresh
+    }}>
+      {children}
     </GlobalContext.Provider>
   )
 }
