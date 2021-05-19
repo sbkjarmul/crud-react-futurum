@@ -2,12 +2,15 @@ import React, { createContext, useState, useEffect } from 'react'
 
 export const GlobalContext = createContext();
 
-export const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({ children }) => {
 
   const [campaigns, setCampaigns] = useState([]);
   const [currentCampaign, setCurrentCampaign] = useState({}); 
   const [refresh, setRefresh] = useState(true);
  
+  useEffect(() => {
+    getCampaigns();
+  }, [refresh])
 
   const getCampaigns = async () => {
     const response = await fetch('http://localhost:5000/campaigns');
@@ -17,37 +20,33 @@ export const GlobalProvider = ({children}) => {
   }
 
   const addCampaign = async (campaign) => {
-    const response = await fetch('http://localhost:5000/campaigns', 
+    await fetch('http://localhost:5000/campaigns', 
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(campaign)
     });
 
-    const data = response.json();
-    console.log('Dodano!');
     setRefresh(!refresh);
   }
 
   const editCampaign = async (campaign) => {
-    const response = await fetch(`http://localhost:5000/campaigns/${campaign.id}`, 
+    await fetch(`http://localhost:5000/campaigns/${campaign.id}`, 
     {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(campaign)
     });
-
-    const data = response.json();
-    console.log('Zaktualizowano!');
+    
     setRefresh(!refresh);
   }
 
   const deleteCampaign = async (id) => {
-    const response = await fetch(`http://localhost:5000/campaigns/${id}`,
+    await fetch(`http://localhost:5000/campaigns/${id}`,
     {
       method: 'DELETE',
     });
-    console.log('Usunięto!');
+    
     setRefresh(!refresh);
   }
 
@@ -61,7 +60,7 @@ export const GlobalProvider = ({children}) => {
       editCampaign, 
       deleteCampaign, 
       refresh }}>
-      {children}
+        {children}
     </GlobalContext.Provider>
   )
 }

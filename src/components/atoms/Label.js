@@ -2,7 +2,7 @@ import React from 'react'
 
 const Label = ({ children }) => {
   return (
-      <label className="form__label">{children}</label>
+    <label className="form__label">{children}</label>
   )
 }
 

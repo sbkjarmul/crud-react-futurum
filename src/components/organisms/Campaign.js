@@ -36,9 +36,13 @@ export const Campaign = ({ campaign }) => {
       <div className="campaign__column--radius">{ campaign.radius } km</div>
       <div className="campaign__column--action">
         <Link to={`/edit/${campaign.id}`} onClick={getCampaign}>
-          <Button buttonSize="small" buttonType="button"><FaEdit/></Button>
+          <Button buttonSize="small" buttonType="button">
+            <FaEdit/>
+          </Button>
         </Link>
-        <Button handleButtonClick={handleClick} buttonSize="small" buttonType="delete"><MdDelete/></Button>
+        <Button handleButtonClick={handleClick} buttonSize="small" buttonType="delete">
+          <MdDelete/>
+        </Button>
       </div>
     </div>
   )

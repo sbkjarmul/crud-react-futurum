@@ -27,8 +27,7 @@ const AddCampaign = () => {
   const [radius, setRadius] = useState(0.0);
   const history = useHistory();
 
-  const onSubmit = (e) => {
-    console.log(status);
+  const onSubmit = () => {
     const newCampaign = {
       name,
       keywords,

@@ -28,9 +28,7 @@ const EditCampaign = () => {
 
   const history = useHistory();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    
+  const onSubmit = () => {
     const newCampaign = {
       id: currentCampaign.id,
       name,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ButtonBox = ({children}) => {
+const ButtonBox = ({ children }) => {
   return (
     <div className="form__button-box">
       {children}

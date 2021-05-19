@@ -7,8 +7,12 @@ import { HiViewGridAdd } from 'react-icons/hi'
 const Navigation = () => {
   return (
     <div className='navbar' >
-      <Link className='navbar__link' to='/'><IoHome></IoHome></Link>
-      <Link className='navbar__link' to='/add'><HiViewGridAdd></HiViewGridAdd></Link>
+      <Link className='navbar__link' to='/'>
+        <IoHome />
+      </Link>
+      <Link className='navbar__link' to='/add'>
+        <HiViewGridAdd />
+      </Link>
     </div>
   )
 }
