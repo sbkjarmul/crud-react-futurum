@@ -13,14 +13,14 @@ export const GlobalProvider = ({ children }) => {
   }, [refresh])
 
   const getCampaigns = async () => {
-    const response = await fetch('http://localhost:5000/campaigns');
+    const response = await fetch('https://herokupostgresflask.herokuapp.com/campaigns');
     const data = await response.json();
 
     setCampaigns(data);
   }
 
   const addCampaign = async (campaign) => {
-    await fetch('http://localhost:5000/campaigns', 
+    await fetch('https://herokupostgresflask.herokuapp.com/campaigns', 
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@ export const GlobalProvider = ({ children }) => {
   }
 
   const editCampaign = async (campaign) => {
-    await fetch(`http://localhost:5000/campaigns/${campaign.id}`, 
+    await fetch(`https://herokupostgresflask.herokuapp.com/campaigns/${campaign.id}`, 
     {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -42,7 +42,7 @@ export const GlobalProvider = ({ children }) => {
   }
 
   const deleteCampaign = async (id) => {
-    await fetch(`http://localhost:5000/campaigns/${id}`,
+    await fetch(`https://herokupostgresflask.herokuapp.com/campaigns/${id}`,
     {
       method: 'DELETE',
     });
