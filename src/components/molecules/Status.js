@@ -5,12 +5,13 @@ import '../../App.css'
 const Status = ({ setStatus, status }) => {
 
   const getStatus = (e) => {
+    console.log(e.target.value);
     if (e.target.value === 'on') {
-      setStatus(false);
+      setStatus(true);
     }
 
     if (e.target.value === 'off') {
-      setStatus(true);
+      setStatus(false);
     }
   } 
 
