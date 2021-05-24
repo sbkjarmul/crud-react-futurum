@@ -7,7 +7,7 @@ const EmeraldAccount = () => {
 
   return (
     <div className="emerald-account">
-      Emerald Account: <span className="emerald-account__fund">{ accountFunds }</span>
+      Emerald Account: <span className="emerald-account__fund">${ accountFunds }</span>
     </div>
   )
 }

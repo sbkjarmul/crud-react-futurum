@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
+import Loader from '../components/atoms/Loader';
 
 export const GlobalContext = createContext();
 
@@ -9,6 +10,7 @@ export const GlobalProvider = ({ children }) => {
   const [currentCampaign, setCurrentCampaign] = useState({}); 
   const [refresh, setRefresh] = useState(true);
   const [accountFunds, setAccountFunds] = useState(EMERALD_FUNDS);
+  const [isLoader, setIsLoader] = useState(true);
  
   useEffect(() => {
     getCampaigns();
@@ -20,6 +22,7 @@ export const GlobalProvider = ({ children }) => {
 
     setCampaigns(data);
     subtractFund(data);
+    setIsLoader(false);
   }
 
   const addCampaign = async (campaign) => {
@@ -73,7 +76,8 @@ export const GlobalProvider = ({ children }) => {
       deleteCampaign, 
       refresh,
       accountFunds,
-      setAccountFunds
+      setAccountFunds,
+      isLoader
     }}>
       {children}
     </GlobalContext.Provider>
