@@ -3,10 +3,12 @@ import React, { createContext, useState, useEffect } from 'react'
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  const EMERALD_FUNDS = 10000000;
 
   const [campaigns, setCampaigns] = useState([]);
   const [currentCampaign, setCurrentCampaign] = useState({}); 
   const [refresh, setRefresh] = useState(true);
+  const [accountFunds, setAccountFunds] = useState(EMERALD_FUNDS);
  
   useEffect(() => {
     getCampaigns();
@@ -17,6 +19,7 @@ export const GlobalProvider = ({ children }) => {
     const data = await response.json();
 
     setCampaigns(data);
+    subtractFund(data);
   }
 
   const addCampaign = async (campaign) => {
@@ -50,6 +53,15 @@ export const GlobalProvider = ({ children }) => {
     setRefresh(!refresh);
   }
 
+  const subtractFund = (data) => {
+    let campaignsFunds = 0;
+    data.forEach(item => {
+      campaignsFunds = campaignsFunds + item.fund;
+    });
+
+    setAccountFunds(EMERALD_FUNDS - campaignsFunds);
+  }
+
   return (
     <GlobalContext.Provider value={{ 
       campaigns,
@@ -59,7 +71,9 @@ export const GlobalProvider = ({ children }) => {
       setCurrentCampaign, 
       editCampaign, 
       deleteCampaign, 
-      refresh
+      refresh,
+      accountFunds,
+      setAccountFunds
     }}>
       {children}
     </GlobalContext.Provider>
