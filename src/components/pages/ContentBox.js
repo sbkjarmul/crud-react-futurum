@@ -4,14 +4,12 @@ import '../../App.css';
 import Home from '../templates/Home'
 import AddCampaign from '../templates/AddCampaign'
 import EditCampaign from '../templates/EditCampaign'
-import { GlobalContext, GlobalProvider } from '../../context/GlobalContext'
+import EmeraldAccount from '../atoms/EmeraldAccount'
 
 const ContentBox = () => {
-  const { accountFunds, setAccountFunds } = useContext(GlobalContext);
-
   return (
     <div className="content-box">
-      <p>Emerald account fund: { accountFunds }</p>
+      <EmeraldAccount />
       <Switch>
         <Route path='/' exact component={Home} />
         <AddCampaign path='/add' component={AddCampaign} />

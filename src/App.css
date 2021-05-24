@@ -244,6 +244,22 @@
   width: 124px;
 } 
 
+.emerald-account {
+  width: 100%;
+  height: 94px;
+  background-color: white;
+
+  font-size: 24px;
+  padding-left: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.emerald-account__fund {
+  margin-left: 8px;
+  font-weight: 700;
+}
+
 @media (max-width: 1368px) {
   .campaign__column {
     font-size: 12px;
